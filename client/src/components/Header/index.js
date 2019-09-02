@@ -1,23 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
+
 
 const Header = () => {
     return (
         // Bootstrap NAVBAR
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="https://books.google.com/">Google Books</a>
+                <h3>Google Books</h3>
                 {/* Button tag refers to hamburger menu button in mobile view */}
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <a className="nav-item nav-link active" href="#">Search<span className="sr-only">(current)</span></a>
-                        <a className="nav-item nav-link" href="#">Saved</a>
-                    </div>
+                <div className="collapse navbar-collapse navbar-nav" id="navbarNavAltMarkup">
+                    <ul className="nav-links">
+                        <Link to="/search">
+                            <li className="nav-item nav-link">Search</li>
+                        </Link>
+                        <Link to="/saved">
+                            <li className="nav-item nav-link">Saved</li>
+                        </Link>
+                    </ul>
                 </div>
             </nav>
+
 
             {/* Bootstrap Header */}
             <div className="card">
